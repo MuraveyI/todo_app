@@ -11,5 +11,10 @@ public class Task {
      public Date creationDate;
     public  Date endDate;
 
+    public Task(String title, String description){
+        this.title = title;
+        this.description=description;
+
+    }
 
 }
