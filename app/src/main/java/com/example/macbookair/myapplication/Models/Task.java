@@ -5,11 +5,11 @@ import java.util.Date;
 public class Task {
 
 
-    String title;
-    String description;
-    Boolean iaDone;
-    Date creationDate;
-    Date endDate;
+   public  String title;
+    public String description;
+    public Boolean iaDone;
+     public Date creationDate;
+    public  Date endDate;
 
 
 }
