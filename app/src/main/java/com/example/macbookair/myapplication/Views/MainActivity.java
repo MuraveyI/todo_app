@@ -38,9 +38,9 @@ public class MainActivity extends AppCompatActivity implements IOnClickListener 
     }
     void initTasks(){
         tasks=new ArrayList<>();
-        tasks.add(new Task("Task1", "very important task"));
-        tasks.add(new Task("Task2", " not very important task"));
-        tasks.add(new Task("Task3", "very very  important task"));
+        tasks.add(new Task(0,"Task1", "very important task"));
+        tasks.add(new Task(1,"Task2", " not very important task"));
+        tasks.add(new Task(2,"Task3", "very very  important task"));
 
     }
     void initRecycler(){
@@ -54,10 +54,29 @@ public class MainActivity extends AppCompatActivity implements IOnClickListener 
     }
 
     @Override
-    public void onClick() {
+    public void onClick(int taskID) {
         Log.d("qwe", "ONClick");
 
+        Task task =null;
+        for(int i=0; i<tasks.size(); i++){
+            Log.d("qwe", ""+ tasks.get(i).id);
+            if (tasks.get(i).id==taskID){
+                task = tasks.get(i);
+                break;
+            } else {
+                Log.d("qwe", "not found");
+
+            }
+        }
+
+        if (task == null){
+            return;
+        }
+
         Intent intent = new Intent(this, TaskDetailsActivity.class);
+
+        intent.putExtra("task_title", task.title);
+        intent.putExtra("task_description", task.description);
         startActivity(intent);
     }
 }
