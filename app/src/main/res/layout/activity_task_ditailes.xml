@@ -20,7 +20,7 @@
         android:id="@+id/task_description"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="20dp"
+        android:layout_marginTop="20dp"
         android:textSize="30sp"
         android:text="@string/default_task_description"
         app:layout_constraintTop_toBottomOf="@+id/task_title" />
@@ -39,7 +39,7 @@
         android:textSize="25sp"
         android:layout_marginLeft="20dp"
         android:text="@string/default_end_date"
-        app:layout_constraintLeft_toRightOf="@+id/creation_date"
-        app:layout_constraintBaseline_toBaselineOf="@+id/creation_date"/>
+        app:layout_constraintTop_toBottomOf="@+id/creation_date"/>
+
 
 </android.support.constraint.ConstraintLayout>
